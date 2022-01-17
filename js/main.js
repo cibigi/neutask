@@ -174,7 +174,7 @@ $(function() {
 	})
 
 	$(document).on("click", "#about", function() {
-		alert("Neutask 0.8\nneutask.app\n(c) Copyright 2022 Christian Battista Giannarelli\nAll rights reserved.")
+		alert("Neutask 0.9\ncibigi.github.io/neutask\nby Christian Battista Giannarelli\nReleased under GNU GPL v3.")
 	})
 
 	$(document).on("click", "#menubutton", function() {
