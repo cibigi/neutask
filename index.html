@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Neutask</title>
+		<meta name="description" content="The easiest to-do app ever.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8">
+		<style>
+			body {
+				font-family: "Manrope", sans-serif;
+				font-weight: 300;
+				transition: all 0.5s;
+				margin: 0px;
+				background-color: #00364a;
+				color: #ffffff;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			#navbar {
+				z-index: 1988;
+				overflow: hidden;
+				position: sticky;
+				position: -webkit-sticky;
+				top: 0;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				padding: 10px;
+				background: #00364a;
+			}
+		</style>
+
+		<script src="/js/jquery.min.js" defer></script>
+		<script src="/js/main.js" defer></script>
+		<link rel="stylesheet" href="main.css" id="style">
+		<link rel="stylesheet" href="/js/jquery-ui.css">
+		<script src="/js/jquery-ui.min.js" defer></script>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/favicons/site.webmanifest">
+		<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#00364a">
+		<link rel="shortcut icon" href="/favicons/favicon.ico">
+		<meta name="apple-mobile-web-app-title" content="Neutask">
+		<meta name="application-name" content="Neutask">
+		<meta name="msapplication-TileColor" content="#00364a">
+		<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#00364a">
+	</head>
+	<body>
+		<header id="navbar">
+			<button id="menubutton"><img class="icon" src="icons/menu_white_24dp.svg" style="padding: 10px" alt="Menu"></button>
+			<span style="font-size: 32px; font-weight: 500;" id="welcome">Neutask</span>
+		</header>
+
+		<div id="nav" style="display: none;">
+			<div id="searchcontainer">
+				<img src="icons/search_white_24dp.svg" style="margin-right: 16px" alt="Search">
+				<input id="search" placeholder="Search...">
+			</div>
+			
+			<button id="export"><img class="icon" src="icons/file_download_white_24dp.svg" style="margin-right: 16px" alt="Export">Export</button>
+			<button id="goimport"><img class="icon" src="icons/file_upload_white_24dp.svg" style="margin-right: 16px" alt="Import">Import</button>
+			<button id="clear"><img class="icon" src="icons/cleaning_services_white_24dp.svg" style="margin-right: 16px" alt="Clear">Clear</button>
+			<button id="about"><img class="icon" src="icons/info_white_24dp.svg" style="margin-right: 16px" alt="About">About</button>
+			<button id="close"><img class="icon" src="icons/close_white_24dp.svg" style="margin-right: 16px; justify-self: flex-end;" alt="Close">Close</button>
+		</div>
+	
+		<div id="view">
+			<div id="adder" class="item">
+				<div style="display: flex; width: 100%;">
+					<div class="data">
+						<input id="newname" placeholder="New task">
+					</div>
+					<div class="button" id="add" style="display: none;">
+						<img class="icon" src="icons/add_task_white_24dp.svg" style="margin: 10px 10px 10px 0px" alt="Add task">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
