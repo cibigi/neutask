@@ -181,11 +181,9 @@ $(function() {
 		if($("#nav").css("display") === "none") {
 			$("#nav").show("slide", "fast")
 			$("#adder").hide("slide", "fast")
-			$("#search").val("")
 		} else {
 			$("#nav").hide("slide", "fast")
 			$("#adder").show("slide", "fast")
-			$("#search").val("")
 		}
 	})
 
