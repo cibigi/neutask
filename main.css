@@ -113,7 +113,11 @@ button:hover {
 }
 
 #adder {
-	height: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+	padding: 10px;
 }
 
 input, button, textarea, select {

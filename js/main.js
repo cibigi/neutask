@@ -2,6 +2,8 @@ $(function() {
 	let view= $("#view")
 	let counter= 0
 
+	view.sortable()
+
 	if(localStorage.getItem("counter") === null) {
 		localStorage.setItem("counter", counter)
 	} else {
@@ -181,11 +183,9 @@ $(function() {
 		if($("#nav").css("display") === "none") {
 			$("#nav").show("slide", "fast")
 			$("#adder").hide("slide", "fast")
-			$("#search").val("")
 		} else {
 			$("#nav").hide("slide", "fast")
 			$("#adder").show("slide", "fast")
-			$("#search").val("")
 		}
 	})
 
@@ -193,11 +193,9 @@ $(function() {
 		if($("#nav").css("display") === "none") {
 			$("#nav").show("slide", "fast")
 			$("#adder").hide("slide", "fast")
-			$("#search").val("")
 		} else {
 			$("#nav").hide("slide", "fast")
 			$("#adder").show("slide", "fast")
-			$("#search").val("")
 		}
 	})
 })
