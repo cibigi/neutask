@@ -1,8 +1,7 @@
 $(function() {
-	let view= $("#view")
 	let counter= 0
 
-	view.sortable()
+	$("#view").sortable()
 
 	if(localStorage.getItem("counter") === null) {
 		localStorage.setItem("counter", counter)
@@ -15,7 +14,7 @@ $(function() {
 			if(localStorage.getItem(i) !== null) {
 				let item= localStorage.getItem(i)
 				let split= item.split(";")
-				view.append(`
+				$("#view").append(`
 					<div class="item" id="` + split[0] + `">
 						<div class="data">
 							<div style="display: flex; flex-direction: column; margin-top: 10px">
@@ -29,7 +28,7 @@ $(function() {
 		}
 	}
 
-	$(window).scroll(function() {     
+	$(window).on("scroll", function() {     
 		var scroll = $(window).scrollTop()
 		if(scroll>0) {
 			$("#navbar").css("box-shadow", "10px 10px 20px #002e3f, -10px -10px 20px #003e55")
@@ -47,8 +46,14 @@ $(function() {
 
 	$("#search").on("keypress", function(e) {
 		if($("#search").val() !== "" && $("#search").val() !== " ") {
-			if(e.which === 13) {
-				$("#nav").hide("slide", "fast")
+			if(e.key === "Enter") {
+				if($("#nav").css("display") === "none") {
+					$("#nav").show("slide", "fast")
+					$("#adder").hide("slide", "fast")
+				} else {
+					$("#nav").hide("slide", "fast")
+					$("#adder").show("slide", "fast")
+				}
 			}
 		} 
 	})
@@ -63,7 +68,7 @@ $(function() {
 
 	$("#newname").on("keypress", function(e) {
 		if($("#newname").val() !== "" && $("#newname").val() !== " ") {
-			if(e.which === 13) {
+			if(e.key === "Enter") {
 				$("#add").trigger("click")
 			}
 		} 
@@ -75,7 +80,7 @@ $(function() {
 			localStorage.setItem("counter", counter)
 			let id= Math.floor(Math.random()*(999999-111111)+111111)
 			localStorage.setItem(counter, id + ";" + $("#newname").val())
-			view.append(`
+			$("#view").append(`
 				<div class="item" id="` + id + `">
 					<div class="data">
 						<div style="display: flex; flex-direction: column; margin-top: 10px">
